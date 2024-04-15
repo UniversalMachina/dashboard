@@ -1,23 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+// import Ecommerce from "./JsMastery_Dashboard/pages/Ecommerce";
+import Ed_Roh_Dashboard from "./EdRoh_Dashboard";
+import { ColorModeContext, useMode } from "./EdRoh_Dashboard/theme";
 
 function App() {
+  const [theme, colorMode] = useMode();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="main">
+          <ColorModeContext.Provider value={colorMode}>
+      {/* <ThemeProvider theme={theme}> */}
+      <Ed_Roh_Dashboard />
+      {/* </ThemeProvider> */}
+    </ColorModeContext.Provider>
     </div>
   );
 }
